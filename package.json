@@ -1,0 +1,64 @@
+{
+  "_from": "wdio-5-testrail-reporter@^0.0.2",
+  "_id": "wdio-5-testrail-reporter@^0.0.2",
+  "_inBundle": false,
+  "_location": "/@wdio/testrail-reporter",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "wdio-5-testrail-reporter@^0.0.2",
+    "name": "wdio-5-testrail-reporter",
+    "escapedName": "wdio-5-testrail-reporter",
+    "scope": "@wdio",
+    "rawSpec": "^0.0.2",
+    "saveSpec": null,
+    "fetchSpec": "^0.0.2"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/wdio-5-testrail-reporter/-/testrail-reporter-0.0.2.tgz",
+  "_spec": "wdio-5-testrail-reporter@^0.0.2",
+  "_where": "d:\\_CK\\autotesting\\ck-app\\test-framework",
+  "author": {
+    "name": "Anton Dyachuk",
+    "email": "anton.dyachuk@valtech.com"
+  },
+  "bugs": {
+    "url": "https://github.com/ValtechLLC/wdio-5-testrail-reporter/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@wdio/reporter": "^5.4.15",
+    "mocha-testrail-reporter": "^1.0.12",
+    "sync-request": "^4.1.0"
+  },
+  "deprecated": false,
+  "description": "A WebdriverIO plugin to report testrail service",
+  "homepage": "https://github.com/ValtechLLC/wdio-5-testrail-reporter",
+  "keywords": [
+    "webdriver",
+    "wdio",
+    "wdio-reporter",
+	"testrail"
+  ],
+  "license": "MIT",
+  "main": "./build/index",
+  "name": "wdio-5-testrail-reporter",
+  "peerDependencies": {
+    "@wdio/cli": "^5.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:ValtechLLC/wdio-5-testrail-reporter.git"
+  },
+  "scripts": {
+    "generate-cases": "node scripts/generate-cases.js"
+  },
+  "version": "0.0.2"
+}
