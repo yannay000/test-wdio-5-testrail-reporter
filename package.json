@@ -1,33 +1,33 @@
 {
-  "_from": "wdio-5-testrail-reporter@^0.0.2",
-  "_id": "wdio-5-testrail-reporter@^0.0.2",
+  "_from": "wdio-5-testrail-reporter@^0.0.3",
+  "_id": "wdio-5-testrail-reporter@^0.0.3",
   "_inBundle": false,
   "_location": "/@wdio/testrail-reporter",
   "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "wdio-5-testrail-reporter@^0.0.2",
+    "raw": "wdio-5-testrail-reporter@^0.0.3",
     "name": "wdio-5-testrail-reporter",
     "escapedName": "wdio-5-testrail-reporter",
     "scope": "@wdio",
-    "rawSpec": "^0.0.2",
+    "rawSpec": "^0.0.3",
     "saveSpec": null,
-    "fetchSpec": "^0.0.2"
+    "fetchSpec": "^0.0.3"
   },
   "_requiredBy": [
     "#DEV:/",
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/wdio-5-testrail-reporter/-/testrail-reporter-0.0.2.tgz",
-  "_spec": "wdio-5-testrail-reporter@^0.0.2",
+  "_resolved": "https://registry.npmjs.org/wdio-5-testrail-reporter/-/testrail-reporter-0.0.3.tgz",
+  "_spec": "wdio-5-testrail-reporter@^0.0.3",
   "_where": "d:\\_CK\\autotesting\\ck-app\\test-framework",
   "author": {
     "name": "Anton Dyachuk",
     "email": "anton.dyachuk@valtech.com"
   },
   "bugs": {
-    "url": "https://github.com/ValtechLLC/wdio-5-testrail-reporter/issues"
+    "url": "https://github.com/ValtechLLC/test-wdio-5-testrail-reporter/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
@@ -37,7 +37,7 @@
   },
   "deprecated": false,
   "description": "A WebdriverIO plugin to report testrail service",
-  "homepage": "https://github.com/ValtechLLC/wdio-5-testrail-reporter",
+  "homepage": "https://github.com/ValtechLLC/test-wdio-5-testrail-reporter",
   "keywords": [
     "webdriver",
     "wdio",
@@ -55,10 +55,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com:ValtechLLC/wdio-5-testrail-reporter.git"
+    "url": "git://github.com:ValtechLLC/test-wdio-5-testrail-reporter.git"
   },
   "scripts": {
     "generate-cases": "node scripts/generate-cases.js"
   },
-  "version": "0.0.2"
+  "version": "0.0.3"
 }
