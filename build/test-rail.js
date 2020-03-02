@@ -126,6 +126,14 @@ class TestRail {
     }
 
     /**
+     * @param {string} suiteId
+     * @return {[]}
+     */
+    getSuite(suiteId) {
+        return this._get(`get_suite/${suiteId}`);
+    }
+    
+    /**
      * @param {string} title
      * @param {number} sectionId
      * @return {{id}}
@@ -163,7 +171,8 @@ class TestRail {
      * @param {callback} callback
      */
     publish(name, description, suiteId, results, callback = undefined) {
-		let run = this.addRun(name, description, suiteId, results);
+        let suite = this.getSuite(suiteId)
+  		let run = this.addRun(`${suite.name} ${name}`, description, suiteId, results);
 		console.log(`Results published to ${this.base}?/runs/view/${run.id}`);
 		let body = this.addResultsForCases(run.id, results);
 		// execute callback if specified

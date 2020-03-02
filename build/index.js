@@ -115,7 +115,7 @@ class TestRailReporter extends _reporter.default {
   	let total = this._passes + this._fails + this._pending;
   	let runName = this.options.runName || 'WebDriver.io test rail reporter';
   	let caps = this.getCapabilitiesStr(runner.capabilities);
-  	let name = `${runName} on ${caps}: automated test run ${executionDateTime}`;
+  	let name = `${runName} on ${caps} -- ${executionDateTime}`;
   	let description = `${name}
 	  Execution summary:
 	  Passes: ${this._passes}
