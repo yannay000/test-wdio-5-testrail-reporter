@@ -143,14 +143,14 @@ class TestRail {
      * @return {*}
      */
     addRun(name, description, suiteId, results) {
-        const case_id = Object.values(results).map(item => item.case_id)
+        const case_ids = Object.values(results).map(item => item.case_id)
         return this._post(`add_run/${this.options.projectId}`, {
             "suite_id": suiteId || this.options.suiteId,
             "name": name,
             "description": description,
             "assignedto_id": this.options.assignedToId,
             "include_all": false,
-            "case_id": case_id
+            "case_ids": case_ids
         });
     }
 
