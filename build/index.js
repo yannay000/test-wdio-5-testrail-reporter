@@ -132,3 +132,4 @@ class TestRailReporter extends _reporter.default {
 
 var _default = TestRailReporter;
 exports.default = _default;
+module.exports = exports['default'];

@@ -139,15 +139,18 @@ class TestRail {
     /**
      * @param {string} name
      * @param {string} description
+     * @param {{case_id, status_id, comment}[]} results
      * @return {*}
      */
-    addRun(name, description, suiteId) {
+    addRun(name, description, suiteId, results) {
+        const case_id = Object.values(results).map(item => item.case_id)
         return this._post(`add_run/${this.options.projectId}`, {
             "suite_id": suiteId || this.options.suiteId,
             "name": name,
             "description": description,
             "assignedto_id": this.options.assignedToId,
-            "include_all": true
+            "include_all": false,
+            "case_id": case_id
         });
     }
 
@@ -160,7 +163,7 @@ class TestRail {
      * @param {callback} callback
      */
     publish(name, description, suiteId, results, callback = undefined) {
-		let run = this.addRun(name, description, suiteId);
+		let run = this.addRun(name, description, suiteId, results);
 		console.log(`Results published to ${this.base}?/runs/view/${run.id}`);
 		let body = this.addResultsForCases(run.id, results);
 		// execute callback if specified
