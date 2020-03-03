@@ -13,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function titleToSuiteId(title) {
 	const match = title.match(/\bT?S(\d+)\b/g);
-	return match.length ? match[0] : '';
+	return match != null ? match[0] : '';
 }
 
 class TestRailReporter extends _reporter.default {
