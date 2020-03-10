@@ -199,7 +199,7 @@ class TestRail {
             console.log('second ')
             helper.write([run_id,suiteId,case_ids])
             case_ids = helper.cases(suiteId)
-            run = this.updateRun(run_id,case_ids)
+            this.updateRun(run_id,case_ids)
         }
   		//let run = this.addRun(`${suite.name} ${name}`, description, suiteId, results);
 		console.log(`Results published to ${this.base}?/runs/view/${run_id}`);
