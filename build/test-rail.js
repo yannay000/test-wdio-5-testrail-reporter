@@ -1,4 +1,5 @@
 const request = require("sync-request");
+let Helper = require('./helper');
 
 /**
  * TestRail basic API wrapper
@@ -162,6 +163,19 @@ class TestRail {
         });
     }
 
+     /**
+     * @param {string} runid
+     * @param {[]} case_ids
+     * @return {*}
+     */
+    updateRun(runId, case_ids) {
+        //const case_ids = Object.values(results).map(item => item.case_id)
+        return this._post(`update_run/${runId}`, {
+            "include_all": false,
+            "case_ids": case_ids
+        });
+    }
+
     /**
      * Publishes results of execution of an automated test run
      * @param {string} name
@@ -171,10 +185,25 @@ class TestRail {
      * @param {callback} callback
      */
     publish(name, description, suiteId, results, callback = undefined) {
+        let helper = new Helper();
         let suite = this.getSuite(suiteId)
-  		let run = this.addRun(`${suite.name} ${name}`, description, suiteId, results);
-		console.log(`Results published to ${this.base}?/runs/view/${run.id}`);
-		let body = this.addResultsForCases(run.id, results);
+        let case_ids = Object.values(results).map(item => item.case_id)
+        let run_id = helper.checkSuite(suiteId)
+        if (run_id == 0){
+            console.log('first ')
+            let run = this.addRun(`${suite.name} ${name}`, description, suiteId, results);
+            run_id = run.id
+            helper.write([run_id,suiteId,case_ids])
+        }
+        else {
+            console.log('second ')
+            helper.write([run_id,suiteId,case_ids])
+            case_ids = helper.cases(suiteId)
+            run = this.updateRun(run_id,case_ids)
+        }
+  		//let run = this.addRun(`${suite.name} ${name}`, description, suiteId, results);
+		console.log(`Results published to ${this.base}?/runs/view/${run_id}`);
+		let body = this.addResultsForCases(run_id, results);
 		// execute callback if specified
 		if (callback) {
 			callback(body);
